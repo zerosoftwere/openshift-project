@@ -1,12 +1,12 @@
 from flask import Flask, jsonify, request
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route('/api')
+@application.route('/api')
 def index():
     return jsonify({'status': 'up'})
 
-@app.route('/api/greet')
+@application.route('/api/greet')
 def greet():
     name = request.args.get('name')
     return jsonify({'message': f'hello {name if name else "there"}'})
